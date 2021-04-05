@@ -1,0 +1,492 @@
+<!doctype html>
+<html>
+  <head>
+    <title>mojGRAD</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css">
+
+  </head>
+  <body>
+
+    <section>
+      
+        <button type="button" id="toggle" onclick="toggleNav()" 
+        ><u>Pomoć</u>
+  </button>
+  <div class="menu" >
+      <div class="navbar">
+        <p class="pomoc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        
+        <a href="#" class="navbar_link" onclick="alert('radnja u toku')">O nama</a><br> 
+        <div class="mediji">
+        <a href="https://www.instagram.com/bookme.bih/" class="link" ><i class="fa fa-instagram" style="font-size:58px"></i></a>
+        <a href="#" class="link" onclick="alert('radnja u toku')"><i class="fa fa-facebook-square" style="font-size:58px"></i></a>
+        <a href="#" class="link" onclick="alert('radnja u toku')"><i class=" fa fa-linkedin-square" style="font-size:58px"></i></a>
+      </div>
+
+      </div></div>
+  
+      
+      
+    
+
+      <header align="center" style="margin-bottom: 50px;"><img src="slike/logo3.png" alt="logo" width="50%" height="50%" >
+      </header>
+      <main>
+       
+
+
+
+          <form action="" method="POST" name="forma">
+
+          <div class="usluge"><br> <h2 style="text-align: center;">Prijavi problem</h2></div>
+
+          <div class="dugmici">
+          <input type="checkbox" class="dugmic" id="cb1" name="Eko_pr" value="Ekoloski problem" ><label for="cb1" class="chBox"><img src="slike/eko.png" />Ekološki problemi</label>
+          <input type="checkbox" class="dugmic" id="cb2" name="rasvjeta" value="Javna rasvjeta" ><label for="cb2" class="chBox"><img src="slike/rasvjeta.png" />Rasvjeta</label>
+          <input type="checkbox" class="dugmic" id="cb3" name="infrastruktura" value="Infrastruktura" ><label for="cb3" class="chBox"><img src="slike/city.png" />Infrastruktura</label>
+    </div>
+    <div class="dugmici">
+          <input type="checkbox" class="dugmic" id="cb4" name="inspekcija" value="Inspekcija" ><label for="cb4" class="chBox"><img src="slike/detective.png" />Inspekcija</label>
+          <input type="checkbox" class="dugmic" id="cb5" name="zimska_sl" value="Zimska sluzba" ><label for="cb5" class="chBox"><img src="slike/snowfall.png" />Zimska služba</label>
+          <input type="checkbox" class="dugmic" id="cb6" name="ostalo" value="Ostalo" ><label for="cb6" class="chBox"><img src="slike/ellipsis.png" />Ostalo</label>
+          </div>
+
+            <div class="info_a" style="border: 0px solid; border-radius: 10px; padding: 20px; background-color: #FBEEE6; margin-top: 20px;">
+          <p style="color: #181818;"><i class="fa fa-info-circle" aria-hidden="true" style="color:rgba(28,34,36,1);"></i>&#8194;Opis problema:</p>
+            <textarea rows="10" cols="40" maxlength="500" style="text-align: center;" class="unos" name="Omeni" required></textarea>
+            <br>
+            <p style="color:#665E77;"><i class="fa fa-map-marker" aria-hidden="true" style="color:rgba(28,34,36,1);"></i>&#8194;<input type="text" placeholder="Grad, ulica/mjesto?" class="unos" name="mjesto" required></p>
+            <p style="color:#665E77;"><i class="fa fa-map-marker" aria-hidden="true" style="color:rgba(28,34,36,1);"></i>&#8194;<input type="text" placeholder="Adresa?" class="unos" name="adresa"></p><hr>
+            <p style="color:#8E44AD; font-size: 100%; color: #181818;"><br>Nacin obavjestanja  <select name="nacin_obj" class="unos" onchange="changeNof()">
+  <option value="SMS">SMS</option>
+  <option value="EMAIL">EMAIL</option>
+			</select></p>
+			<div style="display: none;" id="email"><p><i class="fa fa-envelope" aria-hidden="true" style="color:rgba(28,34,36,1);"></i>&#8194;<u style="text-decoration-color: #8E44AD;"><input type="text" placeholder="email?" type="email" " class="unos" name="email" required></u></p></div>
+			<div style="display: block;" id="phone"><p><i class="fa fa-phone" aria-hidden="true" style="color:rgba(28,34,36,1);"></i>&#8194;<input type="text" placeholder="broj mobitela?" type="tel"  name="phone" class="unos" name="mobitel" required></p></div><hr>
+			<p style="color:#8E44AD; font-size: 100%; color: rgba(28,34,36,1);">Da li zelite postati anonimni?</p><label class="switch">
+  				<input type="checkbox" name="anonim" id="anonim" onclick="toggleAnonim()">
+  				<span class="slider round"></span>
+				</label><br><br>
+  				 <div id="imePrezime"><i class="fa fa-user" aria-hidden="true" style="color:rgba(28,34,36,1);"></i>&#8194;<input type="text" placeholder="Ime i prezime?" class="unos" name="imePrezime"  required></div>
+            <br><hr>
+            <p style="color:#8E44AD; font-size: 100%; color: rgba(28,34,36,1);">Trenutno se nalazim na lokaciji problema?</p>
+				<label class="switch">
+  				<input type="checkbox">
+  				<span class="slider round"></span>
+				</label><br><br>
+  				<input style="padding: 7px; margin-right: 30px; color: #181818;" type="button" value="fotogrfija" class="unos" name="fotogrfija"> 
+  				<input style="padding: 7px; color: #181818;" type="button" value="slika" class="unos" name="slika" ><br><hr>
+          <p style="color:#8E44AD; font-size: 100%; color: #181818;">Obrati se <select name="obabir_se" class="unos" onchange="changeVij()">
+  <option value="Nacelnik">Načelniku</option>
+  <option value="EMAIL">Vijećnicma</option>
+      </select></p>
+      <p style="color:#8E44AD; font-size: 100%; color: #181818; display: none;" id="vijece">Odaberite vijećnika <select name="obarti" class="unos">
+  <option value="SDA-Alma Omerović">SDA-Alma Omerović</option>
+  <option value="SDA-Anel Bumbulovi">SDA-Anel Bumbulović</option>
+  <option value="SDA-Mehmed Sinanović">SDA-Mehmed Sinanović</option>
+  <option value="SDA-Elma Masnopita">SDA-Elma Masnopita</option>
+  <option value="SDA-Alen Hasković">SDA-Alen Hasković</option>
+  <option value="SDA-Alen Arnautović">SDA-Alen Arnautović</option>
+  <option value="SDA-Adem Alić">SDA-Adem Alić</option>
+  <option value="SDA-Halid Dizdarević">SDA-Halid Dizdarević</option>
+  <option value="SDA-Seid Bektić">SDA-Seid Bektić</option>
+  <option value="SDA-Kenan Hasić">SDA-Kenan Hasić</option>
+<option value="SDA-Semir Dedić">SDA-Semir Dedić</option>
+  <option value="SDA-Anel Bumbulovi">SDA-Denis Dilberović</option>
+
+  <option value="NIP-Vernesa Bešlij">NIP-Vernesa Bešlija</option>
+  <option value="NIP-Almir Špiodić">NIP-Almir Špiodić</option>
+  <option value="NIP-Kenan Buza">NIP-Kenan Buza</option>
+  <option value="NIP-Dino Čustović">NIP-Dino Čustović</option>
+  <option value="NIP-Adnan Abadžija">NIP-Adnan Abadžija</option>
+  <option value="NIP-Amina Ramić">NIP-Amina Ramić</option>
+  <option value="NIP-Meho Hido">NIP-Meho Hido</option>
+  <option value="NIP-Alema Džafo">NIP-Alema Džafo</option>
+
+  <option value="SDP-Alan Šerak">SDP-Alan Šerak</option>
+  <option value="SDP-Anela Subašić">SDP-Anela Subašić</option>
+  <option value="SDP-Selma Barić">SDP-Selma Barić</option>
+
+  <option value="SBB-Akif Bešlija">SBB-Akif Bešlija</option>
+  <option value="SBB-Muhamed Handžić">SBB-Muhamed Handžić</option>
+
+      </select></p>
+  				<p style="color:#8E44AD; font-size: 100%; color: #181818;">Dajem punovazan pristanak za obradu podataka o licnosti?</p>
+				<label class="switch">
+  				<input type="checkbox">
+  				<span class="slider round"></span>
+				</label><br><br>
+  				<input type="submit" value="Prijavi" class="navbar_link" style="color:rgba(28,34,36,1); " onclick="alert('radnja u toku')"><br>
+          </div>
+        </form>
+
+
+
+
+
+      </main>
+    </section>
+  </body>
+</html>
+<style type="text/css">
+   ::-webkit-scrollbar{
+    width: 0px;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 90%;
+  width: 35%;
+  left: 2px;
+  bottom: 4px;
+  top: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgba(28,34,36,1);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(170%);
+  -ms-transform: translateX(170%);
+  transform: translateX(170%);
+}
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 20%;
+  height: 25%;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+hr{
+	border: 1px solid rgba(28,34,36,1);
+}
+textarea {
+  width: 90%;
+  height: 150px;
+  resize: none;
+}
+.info_a{
+    width: 66%;
+    height: 60%;
+    margin-left: auto;
+    margin-right: auto;
+   font-size: 250%;
+  }
+.unos{
+	font-family: Arial;
+	margin:5px;
+    color: rgba(28,34,36,1);
+    box-shadow: 0 0 5px rgba(28,34,36,1);
+    border: 0px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 70%;
+
+	}
+	.unos:focus{outline: none;}
+  .nav-icon {
+  margin: 1em;
+  width: 40px;
+  cursor: pointer;
+}
+.pomoc{
+	width: 60%;
+	padding: 10px;
+  border:4px solid #f6cb00;
+  text-align: center;
+  border-radius: 15px;
+  color: #D05E5E;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+.mediji{
+  border-bottom: 4px solid #f6cb00;
+}
+.link{
+  margin:10px;
+  color: #D05E5E;
+  transition: color 0.5s ease-out;
+  text-decoration: none;
+}
+.link:hover{
+  color: #76D7C4;
+}
+  main{
+    background-color: #f6cb00;
+    border-radius: 30px;
+    min-height: 100px;
+    padding-top: 10px;
+    margin-top: 0px;
+    font-family: sans-serif;
+  text-align: center;
+  scroll-behavior: smooth;
+ 
+}
+section:hover{overflow-y: scroll;}
+
+.usluge {padding:15px;}h2{font-size: 1.5rem;
+    text-align: left;
+    font-weight: 500;
+    color: #3E3049;
+    font-size: 250%;
+    }
+.usluga{
+    display: flex;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 0px 20px #919091;
+transition: box-shadow 0.5s ease-out;
+}
+.usluga:hover{box-shadow: 2px 0px 20px #d75c8c; cursor: pointer;}
+.info{margin-left:20px;
+    text-align: left;
+    width: 100%;}
+.naziv{
+      font-weight: bold;  
+     
+  }
+  .lokacija{
+      color:#665E77;
+    }
+    .vjestine{
+      color:#7358D4;
+    }
+.dugmici{
+    display: flex;
+    padding:10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+
+    }
+  .dugmic{
+  display: flex;
+    padding:10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    
+}
+.chBox {
+  flex:1;  
+  height: 110px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #FBEEE6;
+  margin:5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 2px 0px 20px rgba(145, 144, 145,70%);
+  transition: background-color 2s ease-out;
+  transition: box-shadow 0.5s ease-out;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+  font-size: 150%;
+}
+.chBox  img {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 10px;
+
+}
+:checked + .chBox :before {
+  transform: scale(1);
+}
+:checked + .chBox  {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #333;
+  z-index: 1;
+}
+input[type="checkbox"][id^="cb"] {
+  display: none;
+}
+  section{
+  height:90%;
+  width:95%;
+  border:1px solid #ccc;
+  border-radius:20px;
+  background: #FFEBEF;
+  //background: linear-gradient(100deg, #FFEBEF 33%, #5cbcb0 10% 40%, #FFEBEF 40% 60%);
+  overflow-y:hidden;padding:10px;
+  
+} 
+
+body{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:10px 0px;
+  background-color:#D0ECE7;
+
+}
+body:focus { outline: none; }
+.menu{
+  transition: all 2s linear;
+  padding-left: 5px;
+  height: 95%;
+  width: 99.5%;
+  border-radius:10px;
+  background-color: #181818;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+ 
+
+}
+
+#toggle{
+
+	color: black;
+	font-size: 250%;
+  font-weight: 500;
+  font-family: sans-serif;
+  background: none;
+  border: none;
+  margin-top: 5px;
+  cursor: pointer;
+}
+ .navbar{
+  text-align: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  transition: all 1s linear;
+  display: flex;
+}
+.navbar_link:hover{
+  background: #f6cb00;
+  transition: all 0.5s linear;
+}
+.navbar_link, #naziv{
+  cursor: pointer;
+  padding: 10px;
+  border:4px solid #f6cb00;
+  background-color: #FBEEE6;
+  width: 50%;
+  text-align: center;
+  border-radius: 15px;
+  color: #D05E5E;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: sans-serif;
+  transition: all 0.5s linear;
+}
+.navbar a:hover, #naziv:hover{
+  box-shadow: 2px 0px 20px rgba(145, 144, 145,70%);
+}
+header{
+  padding:30px;
+  padding-top: 0px;
+  margin-top: 0px;
+  margin-top: 20px;
+  padding-bottom: 0px;
+}
+.menu--open{
+  display: none;
+}
+.visuallyhidden {
+  opacity: 0;
+}
+#toggle{
+  background-color: #f6cb00;
+  border: none;
+  padding-left: 5px;
+  height: 70px;
+  width: 30%;
+  border-radius:10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+</style>
+<script type="text/javascript">
+    document.querySelector('.menu').classList.toggle('menu--open');
+ 
+  function toggleNav() {
+    document.querySelector('.menu').classList.toggle('menu--open');
+   
+      }
+  function toggleAnonim() {
+  var checkBox = document.forma.anonim;
+  var text = document.getElementById("imePrezime");
+  if (checkBox.checked == false){
+    text.style.display = "block";
+  } else {
+     text.style.display = "none";
+  }
+}
+function changeNof() {
+  var email = document.getElementById('email');
+  var sms = document.getElementById('phone');
+        if (email.style.display == 'block') {
+            email.style.display = 'none';
+            sms.style.display = 'block';
+        }
+        else if (email.style.display == 'none') {
+            email.style.display = 'block';
+            sms.style.display = 'none';
+        }
+}
+function odabir(i){
+    if(i===1){
+      var checkBox=document.forma.Eko_pr;
+      if (checkBox.checked == true) {
+        checkBox.style.color="red";
+      } else {checkBox.style.color="blue";}
+    }
+}
+function changeVij() {
+  var vijece = document.getElementById('vijece');
+
+        if (vijece.style.display == 'block') {
+            vijece.style.display = 'none';
+        }
+        else if (vijece.style.display == 'none') {
+            vijece.style.display = 'block';
+        }
+}
+</script>
